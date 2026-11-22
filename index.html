@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf6ee">
+  <meta name="description" content="سكر سمسم — حلويات ومخبوزات بطابع بيتي، لجمعتكم ومناسباتكم.">
+  <title>سكر سمسم | حلاوة تُجمعنا</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #faf6ee;
+      --paper: #fffdf9;
+      --ink: #30271f;
+      --muted: #776b5e;
+      --clay: #a44f35;
+      --clay-dark: #843d29;
+      --honey: #e2ae53;
+      --sage: #66745b;
+      --line: #e9dfd1;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid var(--honey); outline-offset: 4px; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgb(250 246 238 / 94%);
+      border-bottom: 1px solid rgb(233 223 209 / 80%);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.22rem; }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50% 50% 50% 10px;
+      color: white;
+      background: var(--clay);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      transform: rotate(-8deg);
+    }
+    .brand-name b { color: var(--clay); }
+    .nav { display: flex; align-items: center; gap: 30px; color: var(--muted); font-size: .92rem; }
+    .nav a:hover { color: var(--clay); }
+    .header-cta { padding: 9px 17px; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; font-weight: 700; }
+    .header-cta:hover { background: white; border-color: var(--clay); }
+
+    .hero { padding-block: 62px 88px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 14px;
+      color: var(--clay);
+      font-size: .86rem;
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 590px;
+      margin-bottom: 18px;
+      font-size: clamp(2.7rem, 5.3vw, 4.65rem);
+      line-height: 1.24;
+      letter-spacing: -.045em;
+    }
+    h1 span { color: var(--clay); font-family: var(--serif); font-weight: 500; font-style: italic; }
+    .hero-copy { max-width: 480px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; margin-top: 28px; }
+    .button {
+      min-height: 49px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--clay);
+      color: white;
+      font-weight: 800;
+      transition: background .2s, transform .2s;
+    }
+    .button:hover { background: var(--clay-dark); transform: translateY(-2px); }
+    .button-light { color: var(--ink); background: transparent; border-color: var(--line); }
+    .button-light:hover { color: var(--clay-dark); background: white; }
+    .button-arrow { font-size: 1.15rem; line-height: 1; }
+    .hero-note { margin: 13px 0 0; color: #918577; font-size: .78rem; }
+    .hero-art { min-height: 445px; position: relative; }
+    .hero-photo {
+      position: absolute;
+      inset: 14px 34px 14px 48px;
+      width: calc(100% - 82px);
+      height: calc(100% - 28px);
+      object-fit: cover;
+      border-radius: 46% 46% 18px 18px;
+      box-shadow: 0 24px 60px rgb(68 45 25 / 15%);
+    }
+    .art-ring {
+      position: absolute;
+      inset: 0 0 0 14px;
+      border: 1px solid #d5bd98;
+      border-radius: 48% 48% 22px 22px;
+      transform: rotate(4deg);
+    }
+    .art-stamp {
+      position: absolute;
+      right: 0;
+      bottom: 40px;
+      width: 124px;
+      height: 124px;
+      display: grid;
+      place-content: center;
+      border: 1px solid rgb(255 255 255 / 70%);
+      border-radius: 50%;
+      background: var(--sage);
+      color: white;
+      text-align: center;
+      line-height: 1.55;
+      box-shadow: 0 12px 30px rgb(48 39 31 / 14%);
+      transform: rotate(-8deg);
+    }
+    .art-stamp b { display: block; color: #f3d28f; font-size: 1.25rem; }
+    .seed { position: absolute; width: 12px; height: 21px; border-radius: 50%; background: var(--honey); transform: rotate(36deg); }
+    .seed-one { top: 50px; left: 0; }
+    .seed-two { top: 93px; left: 19px; transform: rotate(-26deg); }
+    .seed-three { bottom: 33px; left: 8px; width: 9px; height: 16px; }
+
+    .promise { padding-block: 26px; border-block: 1px solid var(--line); background: #f4eee3; }
+    .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .promise-item { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--muted); font-size: .92rem; }
+    .promise-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #e7dcc9; color: var(--clay); font-size: 1rem; }
+
+    .section { padding-block: 92px; }
+    .section-heading { max-width: 610px; margin: 0 auto 38px; text-align: center; }
+    .section-heading .eyebrow { justify-content: center; }
+    h2 { margin-bottom: 10px; font-size: clamp(2rem, 3.4vw, 2.85rem); line-height: 1.35; letter-spacing: -.03em; }
+    .section-heading > p:last-child { margin-bottom: 0; color: var(--muted); }
+    .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .product:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgb(48 39 31 / 8%); }
+    .product-image { position: relative; height: 225px; overflow: hidden; background: #e8dccb; }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .product:hover .product-image img { transform: scale(1.04); }
+    .product-tag { position: absolute; top: 14px; right: 14px; padding: 5px 12px; border-radius: 99px; background: rgb(255 253 249 / 92%); color: var(--clay-dark); font-size: .75rem; font-weight: 800; }
+    .product-info { padding: 20px 21px 22px; }
+    .product-info h3 { margin-bottom: 5px; font-size: 1.18rem; }
+    .product-info p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .menu-link { display: table; margin: 30px auto 0; color: var(--clay); font-weight: 800; }
+    .menu-link span { padding-right: 5px; }
+
+    .story { padding-block: 20px 94px; }
+    .story-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 66px;
+      padding: 54px 58px;
+      border-radius: 24px;
+      background: #ede6d9;
+    }
+    .story-copy h2 { max-width: 460px; }
+    .story-copy > p:not(.eyebrow) { color: var(--muted); }
+    .story-image { width: 100%; height: 335px; object-fit: cover; border-radius: 16px; }
+    .story-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; margin-top: 22px; }
+    .story-list span { display: flex; gap: 9px; align-items: center; color: var(--ink); font-size: .88rem; }
+    .story-list span::before { content: "✓"; color: var(--sage); font-weight: 900; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: step; }
+    .step { position: relative; padding: 25px 24px 20px; border-top: 1px solid var(--line); counter-increment: step; }
+    .step::before { content: "0" counter(step); display: block; margin-bottom: 15px; color: var(--clay); font-family: var(--serif); font-size: 1.45rem; }
+    .step h3 { margin-bottom: 6px; font-size: 1.1rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .contact { padding-block: 0 86px; }
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 54px 30px;
+      border-radius: 24px;
+      background: var(--sage);
+      color: white;
+      text-align: center;
+    }
+    .contact-panel::before, .contact-panel::after { content: "✳"; position: absolute; color: rgb(255 255 255 / 13%); font-size: 150px; line-height: 1; }
+    .contact-panel::before { top: -47px; right: 5%; transform: rotate(16deg); }
+    .contact-panel::after { bottom: -66px; left: 5%; transform: rotate(-15deg); }
+    .contact-panel .eyebrow { color: #f2d394; }
+    .contact-panel .eyebrow::before { background: currentColor; }
+    .contact-panel h2 { position: relative; z-index: 1; margin-bottom: 8px; }
+    .contact-panel > p:not(.eyebrow) { position: relative; z-index: 1; color: rgb(255 255 255 / 82%); }
+    .contact-panel .button { position: relative; z-index: 1; margin-top: 10px; background: var(--paper); color: var(--ink); }
+    .contact-panel .button:hover { background: #f3e5ca; }
+
+    footer { border-top: 1px solid var(--line); }
+    .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 25px; color: var(--muted); font-size: .84rem; }
+    .footer-brand { color: var(--ink); font-weight: 800; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .header-inner { min-height: 70px; gap: 12px; }
+      .nav { gap: 15px; font-size: .82rem; }
+      .nav a:nth-child(2) { display: none; }
+      .header-cta { padding: 7px 12px; font-size: .8rem; }
+      .hero { padding-block: 32px 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-art { grid-row: 1; min-height: 330px; }
+      .hero-photo { inset: 10px 32px 10px 40px; width: calc(100% - 72px); height: calc(100% - 20px); }
+      .art-ring { inset-inline-start: 10px; }
+      .art-stamp { right: 0; bottom: 25px; width: 98px; height: 98px; font-size: .85rem; }
+      .art-stamp b { font-size: 1.05rem; }
+      h1 { font-size: clamp(2.7rem, 12vw, 4rem); }
+      .hero-copy { font-size: 1rem; }
+      .promise-grid { grid-template-columns: 1fr; gap: 13px; }
+      .promise-item { justify-content: flex-start; }
+      .section { padding-block: 68px; }
+      .products { grid-template-columns: 1fr; gap: 16px; }
+      .product-image { height: 235px; }
+      .story { padding-block: 0 68px; }
+      .story-panel { grid-template-columns: 1fr; gap: 26px; padding: 28px 22px; }
+      .story-image { height: 250px; grid-row: 1; }
+      .steps { grid-template-columns: 1fr; gap: 5px; }
+      .step { padding: 19px 12px 15px; }
+      .contact { padding-bottom: 62px; }
+      .contact-panel { padding: 43px 20px; }
+      .footer-main { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="سكر سمسم، الرئيسية">
+        <span class="brand-mark" aria-hidden="true">س</span>
+        <span class="brand-name">سكر <b>سمسم</b></span>
+      </a>
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#home">الرئيسية</a>
+        <a href="#story">حكايتنا</a>
+        <a href="#products">منتجاتنا</a>
+        <a href="#contact">تواصلي معنا</a>
+      </nav>
+      <a class="header-cta" href="#contact">اطلبي الآن <span aria-hidden="true">←</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">حلاوة بطابع بيتي</p>
+          <h1>قطعة حلوة،<br><span>ولمّة أحلى.</span></h1>
+          <p class="hero-copy">في سكر سمسم، نؤمن أن أحلى التفاصيل تبدأ من مذاق طيب. اختاري حلاوتك المفضلة وشاركيها مع من تحبين.</p>
+          <div class="actions">
+            <a class="button" href="#products">اكتشفي اختياراتنا <span class="button-arrow" aria-hidden="true">←</span></a>
+            <a class="button button-light" href="#contact">للطلب والاستفسار</a>
+          </div>
+          <p class="hero-note">المنتجات والتفاصيل المعروضة قابلة للتعديل حسب قائمة المتجر.</p>
+        </div>
+        <div class="hero-art" aria-label="صورة مخبوزات طازجة">
+          <div class="art-ring" aria-hidden="true"></div>
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="مخبوزات ذهبية طازجة">
+          <div class="art-stamp" aria-hidden="true"><b>سكر</b>يكمّل<br>لمّتكم</div>
+          <i class="seed seed-one" aria-hidden="true"></i><i class="seed seed-two" aria-hidden="true"></i><i class="seed seed-three" aria-hidden="true"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise" aria-label="مميزات سكر سمسم">
+      <div class="wrap promise-grid">
+        <div class="promise-item"><span class="promise-icon" aria-hidden="true">✳</span>نكهات ترضي كل الأذواق</div>
+        <div class="promise-item"><span class="promise-icon" aria-hidden="true">♡</span>تفاصيل تليق بمناسباتكم</div>
+        <div class="promise-item"><span class="promise-icon" aria-hidden="true">✦</span>اختيارات للضيافة والهدية</div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">من مطبخنا إلى مائدتكم</p>
+          <h2>اختيارات تفتح النفس</h2>
+          <p>من حلاوة اليوم إلى ضيافة المناسبات، اكتشفي الأصناف واسألي عن المتوفر.</p>
+        </div>
+        <div class="products">
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="قطع حلوى مزينة بألوان مبهجة" loading="lazy">
+              <span class="product-tag">للمناسبات</span>
+            </div>
+            <div class="product-info"><h3>حلى المناسبات</h3><p>تشكيلة حلوة تضيف لمسة بهجة لاجتماعاتكم واحتفالاتكم.</p></div>
+          </article>
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="مخبوزات طازجة للتقديم" loading="lazy">
+              <span class="product-tag">اختيار اليوم</span>
+            </div>
+            <div class="product-info"><h3>مخبوزات السمسم</h3><p>مذاق غني يناسب قهوة الصباح وضيافة آخر النهار.</p></div>
+          </article>
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="كيكة شوكولاتة مزينة" loading="lazy">
+              <span class="product-tag">للمشاركة</span>
+            </div>
+            <div class="product-info"><h3>كيكات وحلى</h3><p>خيارات حلوة لتكتمل بها جمعتكم أو تهدوا بها أحبابكم.</p></div>
+          </article>
+        </div>
+        <a class="menu-link" href="#contact">اسألي عن قائمة المنتجات <span aria-hidden="true">←</span></a>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="wrap story-panel">
+        <div class="story-copy">
+          <p class="eyebrow">حكاية بطعم حلو</p>
+          <h2>لأن أجمل اللحظات تبدأ حول المائدة</h2>
+          <p>جمعنا في سكر سمسم حبّ الحلوى ومتعة المشاركة. نختار لكم أصنافًا تلائم تفاصيل يومكم، من ضيافة بسيطة إلى مناسبة تستحق الاحتفال.</p>
+          <div class="story-list">
+            <span>أصناف متنوعة</span>
+            <span>مناسبة للضيافة</span>
+            <span>تفاصيل حسب الطلب</span>
+            <span>خيارات للهدايا</span>
+          </div>
+        </div>
+        <img class="story-image" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="مخبوزات معدّة للمشاركة" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">بكل سهولة</p>
+          <h2 id="how-title">طلبك بثلاث خطوات</h2>
+          <p>أخبرينا بما تحبين، ونساعدك في ترتيب طلبك.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>اختاري ما تشتهين</h3><p>تصفحي الأصناف أو اسألي عن الخيارات المتاحة.</p></article>
+          <article class="step"><h3>أرسلي تفاصيلك</h3><p>حددي الصنف والكمية والتاريخ المناسب.</p></article>
+          <article class="step"><h3>نرتب طلبك</h3><p>نتواصل معك لتأكيد التفاصيل وموعد الاستلام.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-panel">
+        <p class="eyebrow">جاهزة لشيء حلو؟</p>
+        <h2>خلّي الحلا علينا</h2>
+        <p>أرسلي لنا طلبك أو استفسارك، ويسعدنا نساعدك تختارين.</p>
+        <a class="button" href="https://wa.me/905312599208?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%B3%D9%83%D8%B1%20%D8%B3%D9%85%D8%B3%D9%85" target="_blank" rel="noopener noreferrer">اطلبي عبر واتساب <span class="button-arrow" aria-hidden="true">←</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-main">
+      <a class="footer-brand" href="#home">سكر سمسم</a>
+      <span>حلاوة تُجمعنا، من القلب إلى مائدتكم.</span>
+      <span>© 2026 سكر سمسم</span>
+    </div>
+  </footer>
+</body>
+</html>
